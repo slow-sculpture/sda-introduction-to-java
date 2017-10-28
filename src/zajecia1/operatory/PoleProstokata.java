@@ -1,11 +1,17 @@
 package zajecia1.operatory;
+
+import java.util.Scanner;
+
 /*
     Przyklad obliczania pola prostokata dla danych wartosci
  */
 public class PoleProstokata {
     public static void main(String[] args) {
-        double a = 15;
-        double b = 5;
+        //zmiana kodu - wczytywanie ze scannera
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Podaj boki prostokata: ");
+        double a = sc.nextDouble();
+        double b = sc.nextDouble();
 
         //policz pole i wypisz
         // double pole =
