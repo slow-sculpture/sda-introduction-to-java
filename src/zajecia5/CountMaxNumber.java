@@ -28,6 +28,7 @@ public class CountMaxNumber {
             System.out.print(array[i] + " ");
         }
 
+
         //zliczyc ile razy max sie pojawia
         int counter = 0;
         for(int i = 0; i < array.length; i++){
