@@ -3,7 +3,7 @@ package zajecia4;
 import java.util.Random;
 
 //wylosuj 10 wartosci i znajdz najwieksza
-public class ArrayZadanie5 {
+public class ArrayZadanie4 {
     public static void main(String[] args) {
         Random random = new Random();
         int[] array = new int[10];

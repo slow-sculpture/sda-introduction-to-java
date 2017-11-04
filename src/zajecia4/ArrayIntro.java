@@ -1,5 +1,7 @@
 package zajecia4;
 
+
+////////////////tablica - ciag wartosci wystepujacych obok siebie w pewnym obszarze pamieci
 ////////////zadanie 1////////////////////////////////////////
 public class ArrayIntro {
     public static void main(String[] args) {
