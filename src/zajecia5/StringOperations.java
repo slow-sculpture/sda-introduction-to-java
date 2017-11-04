@@ -10,21 +10,18 @@ public class StringOperations {
 
         //string to inaczej tablica znakow
 
-        if (text.length() <= 20) {
+        if (text.length() < 20) {
             printMenu();
             int choice = sc.nextInt();
             switch (choice) {
                 //kazdy case to bedzie osobna metoda
                 case 1:
-                    System.out.println("Opcja 1 ....");
                     toUpper(text);
                     break;
                 case 2:
-                    System.out.println("Opcja 2.....");
                     toLower(text);
                     break;
                 case 3:
-                    System.out.println("Opcja 3.....");
                     toggleCase(text);
                     break;
             }
@@ -33,18 +30,19 @@ public class StringOperations {
             System.out.println("Napis zbyt dlugi");
         }
 
+
     }
 
     public static void printMenu() {
         System.out.println("1. Wszystkie litery duze");
         System.out.println("2. Wszystkie litery male");
-        System.out.println("1. Wszystkie litery male na duze, a duze na male");
+        System.out.println("3. Wszystkie litery male na duze, a duze na male");
         System.out.println("Twoj wybor");
     }
 
     public static void toUpper(String input) {
         String result = "";
-        for (int i = 0; i <= input.length(); i++) {
+        for (int i = 0; i < input.length(); i++) {
             //pobierz znak na i-tej pozycji
             char element = input.charAt(i);
             //jezeli to jest mala litera to zwieksz (tablica znakow unicode)
@@ -53,6 +51,7 @@ public class StringOperations {
             }
             result += element;
         }
+        System.out.println(result);
     }
 
     public static void toLower(String input) {
@@ -65,6 +64,7 @@ public class StringOperations {
             }
         }
         String result = new String(chars);
+        System.out.println(result);
 
     }
 
@@ -81,5 +81,6 @@ public class StringOperations {
             sb.append(element);
         }
         String result = sb.toString();
+        System.out.println(result);
     }
 }
