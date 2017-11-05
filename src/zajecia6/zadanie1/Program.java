@@ -7,17 +7,20 @@ public class Program {
         Rectangle rec2 = new Rectangle();
         Rectangle rec3 = new Rectangle();
 
-        rec1.a = 1;
-        rec1.b = 2;
+        //rec1.a = 1;
+        rec1.setA(1);
+        //rec1.b = 2;
+        rec1.setB(2);
         rec1.calcArea();
+        System.out.println("Bok a = " + rec1.getA() + ", a bok b = " + rec1.getB());
         System.out.println("Pole rec1 = " + rec1.calcArea() + ", a obwod = " + rec1.calcCircumference());
 
-        rec2.a = 4.454;
-        rec2.b = 5.5667;
+        rec2.setA(4.454);
+        rec2.setB(5.5667);
         System.out.println("Pole rec2 = " + rec2.calcArea() + ", a obwod = " + rec2.calcCircumference());
 
-        rec3.a = 76;
-        rec3.b = 98;
+        rec3.setA(76);
+        rec3.setB(98);
         System.out.println("Pole rec3 = " + rec3.calcArea() + ", a obwod = " + rec3.calcCircumference());
 
     }
