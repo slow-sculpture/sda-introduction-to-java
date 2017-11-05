@@ -20,6 +20,7 @@ public class MatrixIntro {
     //metoda wypelniajaca macierz
     public static void fillMatrix(int[][] m) {
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Podaj wartosci macierzy:");
         for (int i = 0; i < m.length; i++) {
             for (int j = 0; j < m[i].length; j++) {
                 m[i][j] = scanner.nextInt();
@@ -44,7 +45,7 @@ public class MatrixIntro {
         //sprawdzamy z wykorzystanie metody prownujacej rozmiary macierzy w kontekscie mozliwosci
         //ich dodania (rowne wymiary)
         //czyli jesli
-        if (validate(a, b) == false) {
+        if (!validate(a, b)) {
             return null;
         }
 
@@ -62,22 +63,22 @@ public class MatrixIntro {
     //metoda porownujaca rozmiary macierzy - czy sa identyczne (dla dodawania)
     public static boolean validate(int[][] a, int[][] b) {
 
-     /*   if (a.length == b.length && a[0].length == b[0].length) {
-            System.out.println("Prawidlowe wymiary macierzy");
-        } else {
-            System.out.println("Wymiary macierzy nie pozwalaja na ich dodanie");
-        }*/
 
-        //w tym przykladzie przechodzi przez kazdy wiersz i sprawdza czy ma
-        boolean areSame = true;
-        if (a.length == b.length) {
-            for (int i = 0; i < a[i].length; i++) {
-                if (a[i].length != b[i].length) {
-                    areSame = false;
-                }
+        //jesli zawnetrzne wymiary sa rozne to od razu wiemy, ze macierze sie nie zgadzaja
+        if (a.length != b.length) {
+            return false;
+        }
+        //jesli dotarlisym tutaj to zewnetrzne wymiary sa ok
+        //sprawdzamy wiersze
+        for (int i = 0; i < a.length; i++) {
+            //jesli znajdziemy wiersz, gdzie ich liczba kolumn jest rozna
+            //to zwroc falsz
+            if (a[i].length != b[i].length) {
+                return false;
             }
         }
-        return areSame;
+        //jesli dotarlismy az tutaj, to wymiary sa zgodne
+        return true;
     }
 
     public static void main(String[] args) {
@@ -99,7 +100,7 @@ public class MatrixIntro {
         //suma macierzy
         ///// addMatrix(matrix, secondMatrix).var
         int[][] result = addMatrix(matrix, secondMatrix);
-        if(result != null) {
+        if (result != null) {
             printMatrix(result);
         } else {
             System.out.println("Nie mozna dodac takich macierzy");
