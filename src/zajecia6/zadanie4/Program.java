@@ -39,14 +39,15 @@ public class Program {
     }
 
     public static void addNewEmployee(Scanner scanner, Company myCompany) {
+        Scanner scanner2 = new Scanner(System.in);
         System.out.println("Podaj imie: ");
-        String empName = scanner.nextLine();
+        String empName = scanner2.nextLine();
         System.out.println("Podaj nazwisko: ");
-        String empSurname = scanner.nextLine();
+        String empSurname = scanner2.nextLine();
         System.out.println("Poadj wiek: ");
-        int empAge = scanner.nextInt();
+        int empAge = scanner2.nextInt();
         System.out.println("Podaj pensje: ");
-        double empSalary = scanner.nextDouble();
+        double empSalary = scanner2.nextDouble();
 
         Employee employee = new Employee(empName, empSurname, empAge, empSalary);
         boolean isSuccess = myCompany.addEmployee(employee);
