@@ -29,3 +29,5 @@ public class Program {
 
 //jezeli stworzymym konstr parametrowy to bez utworzenia recznego bezparametrowego
 //sam program go nie utworzy
+
+//konstruktory moga miec ta sama nazwe ale rozna sygnatore-> nazwa(parametry)
