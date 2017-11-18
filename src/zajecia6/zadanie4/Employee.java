@@ -11,7 +11,7 @@ public class Employee {
         this.surname = surname;
     }
     public Employee(String name, String surname, int age){
-        this(name, surname);
+        this(name, surname); //odwolanie do wczesniejszego konstruktora musi byc pierwsza linijka kodu
         this.age = age;
     }
     public Employee(String name, String surname, int age, double salary){

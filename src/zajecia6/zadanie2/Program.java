@@ -18,8 +18,9 @@ public class Program {
 
 //konstruktor metoda ktora:                   Point(argumenty)
 //1. ma nazwe jak klasa
-//2. public
+//2. public (moze byc private np. Math)
 //3. nie ma typu zwracanego
+//4. do tworzenia obiektu za pomoca operatora new; new mowi javie zeby zaalokowala pewnien obszar pamieci
 
 //jezeli nie ma w klasie konstruktora
 //to samo zostanie utworzony w pamieci      np. public Point(){}
