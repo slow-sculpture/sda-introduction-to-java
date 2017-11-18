@@ -41,4 +41,9 @@ public class Person {
         return name + " " + getSurname() + " " + getAge(); //przeniesione z Student
                                                             //tu nie trzeba this (domyslnie)
     }
+
+    @Override
+    public String toString() {
+        return name + " " + getSurname() + " " + getAge();
+    }
 }

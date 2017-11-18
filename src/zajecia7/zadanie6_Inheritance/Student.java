@@ -51,4 +51,10 @@ public class Student extends Person {
         // return String.format("%s %s i jestem studentem %s", getName(), getSurname(), getUnivName());
 
     }
+
+
+    @Override
+    public String toString() {
+        return String.format("%s i jestem studentem %s", super.describe(), getUnivName());
+    }
 }
