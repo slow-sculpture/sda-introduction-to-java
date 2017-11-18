@@ -1,4 +1,4 @@
-package zajecia7.zadanie5;
+package zajecia7.zadanie5.zadanie5;
 
 import java.util.Random;
 
@@ -61,5 +61,13 @@ public class Matrix {
 
         }
     }
+
+/*    //walidacja macierzy
+    public boolean matrixValidator(Matrix secondMatrix){
+        if(this.matrix.length != secondMatrix.matrix.length){
+            return false;
+        }
+        return true;
+    }*/
 
 }

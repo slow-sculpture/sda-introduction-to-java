@@ -1,4 +1,4 @@
-package zajecia7.zadanie5;
+package zajecia7.zadanie5.zadanie5;
 
 public class App {
     public static void main(String[] args) {
