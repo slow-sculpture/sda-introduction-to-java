@@ -57,3 +57,7 @@ public class App {
 
     }
 }
+
+//hermetyzacja
+//dziedzicenie
+//polimorfizm
