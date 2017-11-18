@@ -1,4 +1,4 @@
-package zajecia7.zajecia6;
+package zajecia7.zadanie6_Inheritance;
 
 public class Worker extends Person{
     private int salary;

@@ -1,23 +1,17 @@
-package zajecia7.zajecia6;
-
+package zajecia7.zadanie6_Inheritance;
+//Klasa bazowa - superclass
 public class Person {
-    private String name;
+    protected String name;
     private String surname;
     private int age;
 
-    public Person(){
-
-    }
-
-    public Person(String name, String surname){
-        this.name = name;
-        this.surname = surname;
-    }
 
     public Person(String name, String surname, int age){
-        this(name, surname);
+        this.name = name;
+        this.surname = surname;
         this.age = age;
     }
+
 
     public String getName() {
         return name;
