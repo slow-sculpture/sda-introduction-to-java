@@ -36,4 +36,9 @@ public class Person {
     public void setAge(int age) {
         this.age = age;
     }
+
+    public String describe() {
+        return name + " " + getSurname() + " " + getAge(); //przeniesione z Student
+                                                            //tu nie trzeba this (domyslnie)
+    }
 }

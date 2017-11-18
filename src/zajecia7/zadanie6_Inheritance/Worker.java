@@ -4,10 +4,15 @@ public class Worker extends Person{
     private int salary;
     private String position;
 
-  /*  public Worker(int salary, String stand){
+    public Worker(String name, String surname, int age){
+        super(name, surname, age);
+    }
+
+    public Worker(String name, String surname, int age, int salary, String position) {
+        super(name, surname, age);
         this.salary = salary;
-        this.position = stand;
-    }*/
+        this.position = position;
+    }
 
     public int getSalary() {
         return salary;
