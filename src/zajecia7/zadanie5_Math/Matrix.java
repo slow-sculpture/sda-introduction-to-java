@@ -1,4 +1,4 @@
-package zajecia7.zadanie5;
+package zajecia7.zadanie5_Math;
 
 import java.util.Random;
 
@@ -29,6 +29,11 @@ public class Matrix {
     //dodawanie macierzy
     public Matrix addMatrix(Matrix secondMatrix) {      //(tylko druga ktora dodamy) bo jedna bedzie z this
         //sprawdzic czy wymiary drugiej sie zgadzaja
+
+        //zajecia8 wyjatki - nie pozwala przejsc do dalszego kodu jesli nie jest spelniony warunek
+        if (this.x != secondMatrix.x || this.y != secondMatrix.y) {
+            throw new ArithmeticException("Wymiary macierzy sie nie zgadzaja"); //tworzymy nowy obiekt
+        }
 
         //przejsc do obliczen
         Matrix result = new Matrix(this.x, this.y);    //macierz wynikowa (trzecia)
