@@ -1,0 +1,3 @@
+2
+1 Piotr Kowalski 22 2000
+2 Jan Nowak 31 2300

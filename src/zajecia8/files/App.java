@@ -10,21 +10,30 @@ public class App {
         System.out.println("Zawartosc pliku");
 
         String line = null;
-        BufferedReader reader = null;
+        BufferedReader bufferedReader = null;
+        FileReader fileReader = null;
         try {
-            reader = new BufferedReader(new FileReader("notatka.txt"));
-            // System.out.println(reader.readLine());                            //przeczyta tylko linie tekstu - koniec do \n; na koncu null; kazde wywolanie readLine przechodzi linijke dalej
-            while ((line = reader.readLine()) != null) {   //wynik przypisac do zmiennej line
+            fileReader = new FileReader("nontatka.txt");
+            bufferedReader = new BufferedReader(fileReader);
+            // System.out.println(bufferedReader.readLine());                            //przeczyta tylko linie tekstu - koniec do \n; na koncu null; kazde wywolanie readLine przechodzi linijke dalej
+            while ((line = bufferedReader.readLine()) != null) {   //wynik przypisac do zmiennej line
                 System.out.println(line);
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
-            if (reader != null) {
+        } finally {                                     //zamykanie obu readerow
+            if (bufferedReader != null) {
                 try {
-                    reader.close();
+                    bufferedReader.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            if(fileReader !=null){
+                try {
+                    fileReader.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
