@@ -1,4 +1,4 @@
-package companyManager.fileoperations;
+package companyManager.fileoperations.reader;
 
 import companyManager.Employee;
 

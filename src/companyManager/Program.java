@@ -1,11 +1,24 @@
 package companyManager;
 
+import companyManager.fileoperations.reader.EmloyeeReader;
+import companyManager.fileoperations.reader.TxtEmployeeReader;
+
 import java.util.Scanner;
 
 
 //////////////////////////////////rozszerzenie z zajec6 zad4 -> zajecia8 /////// dodana liste pracownikow ma zapisac do pliku
+
+
 public class Program {
     public static void main(String[] args) {
+
+        //test TxtEmployeeReader
+        //posluguje sie interfejsem i polimorfizmeme
+        EmloyeeReader emloyeeReader = new TxtEmployeeReader("listaPracownikow.txt");
+        Employee[] employees = emloyeeReader.readEmployees();
+
+
+
 
         Scanner scanner = new Scanner(System.in);
 
