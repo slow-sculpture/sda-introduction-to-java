@@ -1,6 +1,7 @@
 package companyManager.fileoperations.reader;
 
 import companyManager.Employee;
+import companyManager.fileoperations.util.ParseUtil;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -40,7 +41,7 @@ public class TxtEmployeeReader extends AbstractEmployeeReader {
                 Employee emp = new Employee(split[1], split[2]);
                 emp.setId(Integer.parseInt(split[0]));
                 emp.setAge(Integer.parseInt(split[3]));
-                emp.setSalary(Double.parseDouble(split[4]));
+                emp.setSalary(ParseUtil.parseDouble(split[4]));
                 employees[i] = emp;
 
             }

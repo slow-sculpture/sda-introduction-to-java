@@ -1,7 +1,11 @@
 package companyManager;
 
 public class Employee {
+    ///////////////////////////////////////////////////////////////////////////
     private int id;           //dorabiamy identyfikator + get i set
+    ////////////////////////////////////////////////////////////////////////
+
+
     private String name;
     private String surname;
     private int age;
@@ -48,6 +52,8 @@ public class Employee {
         this.salary = salary;
     }
 
+
+    ////////////////////////////////////////////////////////////////////////////////////////
     public int getId() {
         return id;
     }
@@ -55,8 +61,28 @@ public class Employee {
     public void setId(int id) {
         this.id = id;
     }
+    ///////////////////////////////////////////////////////////////////////////////////////
+
 
     public String getDescription(){
         return String.format("Name: %s, Surname: %s, Salary: %f", name, surname, salary);
     }
+
+
+
+
+    /////////////////////////////////////////////////////////////////////////////////////////
+    @Override
+    public String toString(){
+        return String.format("%d %s %s %s %f %d",
+                id,
+                name,
+                surname,
+                age,
+                salary
+        );
+    }
+    ////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 }

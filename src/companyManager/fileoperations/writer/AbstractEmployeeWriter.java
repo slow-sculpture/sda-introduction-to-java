@@ -2,7 +2,7 @@ package companyManager.fileoperations.writer;
 
 import companyManager.Employee;
 
-public abstract class AbstractEmployeeWriter implements EmloyeeWriter {
+public abstract class AbstractEmployeeWriter implements EmployeeWriter {
     protected String pathToFile;
 
     protected AbstractEmployeeWriter(String pathToFile) {             //konstruktor
@@ -10,7 +10,7 @@ public abstract class AbstractEmployeeWriter implements EmloyeeWriter {
     }
 
     @Override
-    public abstract Employee[] writeEmployees();
+    public abstract void writeEmployees(Employee[] employees);
 
 
 }

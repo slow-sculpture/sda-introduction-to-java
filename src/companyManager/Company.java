@@ -26,7 +26,19 @@ public class Company {
             return true;
         }
         return false;
+        }
+
+
+    ///////////////////////////////////////////////////////////////
+    public void addEmployees(Employee[] employees) {
+        for (int i = 0; i < employees.length; i++) {
+            this.addEmployee(employees[i]);
+        }
+
     }
+//////////////////////////////////////////////////////////////
+
+
 
     //gettery i settery
     public String getName() {
