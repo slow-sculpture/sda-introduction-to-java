@@ -1,11 +1,12 @@
 package companyManager;
 
-import companyManager.fileoperations.EmployeeFactory;
+import companyManager.fileoperations.EmployeeReaderFactory;
 import companyManager.fileoperations.reader.EmployeeReader;
-import companyManager.fileoperations.reader.TxtEmployeeReader;
+import companyManager.fileoperations.util.ArrayUtil;
 import companyManager.fileoperations.writer.EmployeeWriter;
 import companyManager.fileoperations.writer.TxtEmployeeWriter;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 
@@ -14,113 +15,83 @@ import java.util.Scanner;
 
 public class Program {
     private static Scanner scanner = new Scanner(System.in);
+
     public static void main(String[] args) {
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-        /*//test TxtEmployeeReader
-        //posluguje sie interfejsem i polimorfizmeme
-        EmployeeReader employeeReader = new TxtEmployeeReader("listaPracownikow.txt");
-        Employee[] employees = employeeReader.readEmployees();
-
-        //test write
-        EmployeeWriter writer = new TxtEmployeeWriter("test.txt");
-        writer.writeEmployees(employees);*/
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-
-        Scanner scanner = new Scanner(System.in);
 
         System.out.println("Podaj nazwe firmy: ");
         String name = scanner.nextLine();
         Company myCompany = new Company(name);
 
-  /*      printMenu();
-
-        int choice = scanner.nextInt();
-
-        switch (choice) {
-            case 1:
-                addNewEmployee(scanner, myCompany);
-                break;
-            case 2:
-                printListOfEmployees(myCompany);
-                break;
-            case 3:
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-                importEmployee();
-                break;
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
-            default:
-                System.out.println("Invalid command");
-                break;
-        }*/
 
         boolean exit = false;
-               while (!exit) {
-                   printMenu();
-                   int wybor = scanner.nextInt();
-                   switch (wybor) {
-                       case 1:
-                           addNEmployee(myCompany);
-                           printListOfEmployees(myCompany);
-                           break;
-                       case 2:
-                           printListOfEmployees(myCompany);
-                           break;
-                       case 3:
-                           importEmployee(myCompany);
+        while (!exit) {
+            printMenu();
+            int wybor = scanner.nextInt();
+            switch (wybor) {
+                case 1:
+                    addNewEmployee(myCompany);
+                    printListOfEmployees(myCompany);
+                    break;
+                case 2:
+                    printListOfEmployees(myCompany);
+                    break;
+                case 3:
+                    importEmployee(myCompany);
+                    break;
+                case 4:
+                    saveEmployees(myCompany);
+                    break;
+                default:
+                    break;
+            }
 
-                       default:
-                           break;
-                   }
-
-               }}
+        }
+    }
 
 
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////
+    public static void saveEmployees(Company myCompany){
+        System.out.println("Podaj nazwe pliku wraz z docelowy rozszerzeniem: ");
+        String pathToFile = scanner.nextLine();
+        EmployeeWriter writer = new TxtEmployeeWriter(pathToFile);
+        int size = ArrayUtil.countElements(myCompany.getEmployees());
+        Employee[] copy = Arrays.copyOf(myCompany.getEmployees(), size);
+        writer.writeEmployees(copy);
+    }
 
 
-////////////////////////////////////////////////////////////////////////////////////////////////////////
     public static void importEmployee(Company myCompany) {
         System.out.println("Podaj sciezke do pliku");
         String pathToFile = scanner.nextLine();
 
-        EmployeeReader reader = EmployeeFactory.createReader(pathToFile);
+        EmployeeReader reader = EmployeeReaderFactory.createReader(pathToFile);
         Employee[] employees = reader.readEmployees();
-        myCompany.ad(employees);
+        myCompany.addEmployees(employees);
 
     }
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
-
-
-
     public static void printListOfEmployees(Company myCompany) {
         //petla for each
         for (Employee e : myCompany.getEmployees()) {
-            System.out.println(e.getDescription());
+            if (e != null) {
+                System.out.println(e.getDescription());
+            }
         }
     }
 
-    public static void addNewEmployee(Scanner scanner, Company myCompany) {
-        Scanner scanner2 = new Scanner(System.in);
+    public static void addNewEmployee(Company myCompany) {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Podaj imie: ");
-        String empName = scanner2.nextLine();
+        String empName = sc.nextLine();
         System.out.println("Podaj nazwisko: ");
-        String empSurname = scanner2.nextLine();
+        String empSurname = sc.nextLine();
         System.out.println("Poadj wiek: ");
-        int empAge = scanner2.nextInt();
+        int empAge = sc.nextInt();
         System.out.println("Podaj pensje: ");
-        double empSalary = scanner2.nextDouble();
+        double empSalary = sc.nextDouble();
 
         Employee employee = new Employee(empName, empSurname, empAge, empSalary);
         boolean isSuccess = myCompany.addEmployee(employee);
@@ -136,6 +107,7 @@ public class Program {
         System.out.println("1. Dodaj pracownika");
         System.out.println("2. Wyswietl spis pracownikow");
         System.out.println("3. Import pracownikow");
+        System.out.println("4. Zapisz pracownikow do pliku");
         System.out.println("Wybor: ");
     }
 }

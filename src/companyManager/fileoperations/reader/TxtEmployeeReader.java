@@ -42,7 +42,7 @@ public class TxtEmployeeReader extends AbstractEmployeeReader {
                 emp.setId(Integer.parseInt(split[0]));
                 emp.setAge(Integer.parseInt(split[3]));
                 emp.setSalary(ParseUtil.parseDouble(split[4]));
-                employees[i] = emp;
+                employees[i++] = emp;
 
             }
 

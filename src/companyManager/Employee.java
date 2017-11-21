@@ -24,6 +24,18 @@ public class Employee {
         this.salary = salary;
     }
 
+
+    ////////////////////////////////////////////////////////////////////////////////////////
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////
+
+
     public String getName() {
         return name;
     }
@@ -53,19 +65,9 @@ public class Employee {
     }
 
 
-    ////////////////////////////////////////////////////////////////////////////////////////
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-    ///////////////////////////////////////////////////////////////////////////////////////
-
 
     public String getDescription(){
-        return String.format("Name: %s, Surname: %s, Salary: %f", name, surname, salary);
+        return String.format("Name: %s, Surname: %s, Salary: %.2f", name, surname, salary);
     }
 
 
@@ -74,7 +76,7 @@ public class Employee {
     /////////////////////////////////////////////////////////////////////////////////////////
     @Override
     public String toString(){
-        return String.format("%d %s %s %s %f %d",
+        return String.format("%d %s %s %d %.2f",
                 id,
                 name,
                 surname,
