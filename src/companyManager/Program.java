@@ -14,7 +14,7 @@ import java.util.Scanner;
 
 
 public class Program {
-    private static Scanner scanner = new Scanner(System.in);
+    static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
 
@@ -41,6 +41,9 @@ public class Program {
                 case 4:
                     saveEmployees(myCompany);
                     break;
+                case 5:
+                    System.out.println("Konczenie pracy systemu");
+                    exit = true;
                 default:
                     break;
             }
@@ -50,9 +53,10 @@ public class Program {
 
 
     ////////////////////////////////////////////////////////////////////////////////////////////////////////
-    public static void saveEmployees(Company myCompany){
+    private static void saveEmployees(Company myCompany) {
+        Scanner scan = new Scanner(System.in);
         System.out.println("Podaj nazwe pliku wraz z docelowy rozszerzeniem: ");
-        String pathToFile = scanner.nextLine();
+        String pathToFile = scan.nextLine();
         EmployeeWriter writer = new TxtEmployeeWriter(pathToFile);
         int size = ArrayUtil.countElements(myCompany.getEmployees());
         Employee[] copy = Arrays.copyOf(myCompany.getEmployees(), size);
@@ -62,7 +66,8 @@ public class Program {
 
     public static void importEmployee(Company myCompany) {
         System.out.println("Podaj sciezke do pliku");
-        String pathToFile = scanner.nextLine();
+        Scanner scan2 = new Scanner(System.in);
+        String pathToFile = scan2.nextLine();
 
         EmployeeReader reader = EmployeeReaderFactory.createReader(pathToFile);
         Employee[] employees = reader.readEmployees();
@@ -108,6 +113,7 @@ public class Program {
         System.out.println("2. Wyswietl spis pracownikow");
         System.out.println("3. Import pracownikow");
         System.out.println("4. Zapisz pracownikow do pliku");
+        System.out.println("5. Wyjscie z systemu");
         System.out.println("Wybor: ");
     }
 }

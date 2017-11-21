@@ -1,7 +1,7 @@
 package companyManager;
 
 public class Company {
-    private static final int DEFAULT_SIZE = 50;
+    private static final int DEFAULT_SIZE = 5;
     private String name;
     //kompozycja - skladanie sie z (pracownikow)
     private Employee[] employees;
