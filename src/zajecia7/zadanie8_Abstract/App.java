@@ -14,6 +14,7 @@ public class App {
             System.out.println("2. Prostokat");
             System.out.println("3. Kolo");
             System.out.println("4. Pole");
+            System.out.println("5. Wyjsci");
 
             int wybor = scanner.nextInt();
             Figura figura;

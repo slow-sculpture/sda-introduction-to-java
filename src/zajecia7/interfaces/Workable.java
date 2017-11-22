@@ -7,7 +7,7 @@ public interface Workable {
     //interfejs - tylko definicje metod bez pol i konstruktorow
     //reprezentuje liste zachowan bez implementacji
     //nie mozna utworzyc instancji interfejsu
-    //interefejs moze extends innyummi
+    //interefejs moze extends inny 
     //interfejsy sie implementuje
     //nie ma problemu z kolejnoscia konstruktorow itd bo ich nie ma
     //nie ma problemu z co i po czym dziedziczy

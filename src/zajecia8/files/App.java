@@ -13,7 +13,7 @@ public class App {
         BufferedReader bufferedReader = null;
         FileReader fileReader = null;
         try {
-            fileReader = new FileReader("nontatka.txt");
+            fileReader = new FileReader("notatka.txt");
             bufferedReader = new BufferedReader(fileReader);
             // System.out.println(bufferedReader.readLine());                            //przeczyta tylko linie tekstu - koniec do \n; na koncu null; kazde wywolanie readLine przechodzi linijke dalej
             while ((line = bufferedReader.readLine()) != null) {   //wynik przypisac do zmiennej line

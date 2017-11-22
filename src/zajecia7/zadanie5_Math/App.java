@@ -26,7 +26,7 @@ public class App {
         } catch (ArithmeticException e) {
             System.out.println(e.getMessage());
         }
-        ;
+
 
 
     }

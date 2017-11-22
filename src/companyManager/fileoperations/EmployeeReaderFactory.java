@@ -1,9 +1,6 @@
 package companyManager.fileoperations;
 
-import companyManager.fileoperations.reader.EmployeeReader;
-import companyManager.fileoperations.reader.JsonEmployeeReader;
-import companyManager.fileoperations.reader.TxtEmployeeReader;
-import companyManager.fileoperations.reader.XmlEmployeeReader;
+import companyManager.fileoperations.reader.*;
 
 /**
  * Przyklad wzorca projektowego Fabryka
@@ -18,9 +15,9 @@ public class EmployeeReaderFactory {
             return new XmlEmployeeReader(path);
         } else if (path.endsWith(".json")) {
             return new JsonEmployeeReader(path);
-        } /*else  if (path.endsWith(".csv")){
+        } else  if (path.endsWith(".csv")){
             return new CsvEmployeeReader(path);
-        }*/
+        }
         return null;
     }
 }

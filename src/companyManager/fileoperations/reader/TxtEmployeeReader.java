@@ -9,14 +9,14 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class TxtEmployeeReader extends AbstractEmployeeReader {
-    public TxtEmployeeReader(String pathToFile) {                                                     //konstruktor
+    public TxtEmployeeReader(String pathToFile) {                        //konstruktor
         super(pathToFile);
     }
 
     @Override
     public Employee[] readEmployees() {
 
-        Employee[] employees = null;                                                                    //nie wiem jaka duza - zapisane w pierwszej linijce txt
+        Employee[] employees = null;                             //nie wiem jaka duza - zapisane w pierwszej linijce txt
         int i = 0;
 
         //try with resources -> java 7 - samo zrobi close()
@@ -31,9 +31,9 @@ public class TxtEmployeeReader extends AbstractEmployeeReader {
             employees = new Employee[Integer.parseInt(companySize)];
 
             //odczyt wszystkich linii z pliku
-            String line = null;
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
-                //pobierz i-ta linie i podziel po separarowrze (np. spacja)
+                //pobierz i-ta linie i podziel po separatorze (np. spacja)
                 //metoda dzielaca tekst po jakims znaku i tworzaca tablice stringow
                 String[] split = line.split(" ");
                 //ustawiamy odpowiednie pola wg zalaczonego schematu
