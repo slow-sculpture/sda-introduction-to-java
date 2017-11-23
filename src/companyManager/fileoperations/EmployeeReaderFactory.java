@@ -15,8 +15,6 @@ public class EmployeeReaderFactory {
             return new XmlEmployeeReader(path);
         } else if (path.endsWith(".json")) {
             return new JsonEmployeeReader(path);
-        } else  if (path.endsWith(".csv")){
-            return new CsvEmployeeReader(path);
         }
         return null;
     }

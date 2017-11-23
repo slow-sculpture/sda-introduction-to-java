@@ -67,7 +67,7 @@ public class Employee {
 
 
     public String getDescription(){
-        return String.format("Name: %s, Surname: %s, Salary: %.2f", name, surname, salary);
+        return String.format("Name: %s, Surname: %s, Age: %d, Salary: %.2f", name, surname, age, salary);
     }
 
 

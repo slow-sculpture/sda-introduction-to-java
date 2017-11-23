@@ -1,6 +1,7 @@
 package companyManager;
 
 import companyManager.fileoperations.EmployeeReaderFactory;
+import companyManager.fileoperations.EmployeeWriterFactory;
 import companyManager.fileoperations.reader.EmployeeReader;
 import companyManager.fileoperations.util.ArrayUtil;
 import companyManager.fileoperations.writer.EmployeeWriter;
@@ -57,7 +58,8 @@ public class Program {
         Scanner scan = new Scanner(System.in);
         System.out.println("Podaj nazwe pliku wraz z docelowy rozszerzeniem: ");
         String pathToFile = scan.nextLine();
-        EmployeeWriter writer = new TxtEmployeeWriter(pathToFile);
+        //EmployeeWriter writer = new TxtEmployeeWriter(pathToFile);
+        EmployeeWriter writer = EmployeeWriterFactory.createWriter(pathToFile);
         int size = ArrayUtil.countElements(myCompany.getEmployees());
         Employee[] copy = Arrays.copyOf(myCompany.getEmployees(), size);
         writer.writeEmployees(copy);
