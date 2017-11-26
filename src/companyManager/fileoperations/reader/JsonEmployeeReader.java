@@ -15,7 +15,7 @@ public class JsonEmployeeReader extends AbstractEmployeeReader {
     @Override
     public Employee[] readEmployees() {
 
-        int i = 0;
+        /*int i = 0;
         try(BufferedReader bufferedReader = new BufferedReader(new FileReader(pathToFile))){
             String companySize = bufferedReader.readLine();
             int theSize = Integer.parseInt(companySize);
@@ -34,7 +34,7 @@ public class JsonEmployeeReader extends AbstractEmployeeReader {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
+*/
         return new Employee[0];
     }
 }

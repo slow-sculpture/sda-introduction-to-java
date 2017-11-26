@@ -13,14 +13,14 @@ public class JsonEmployeeWriter extends AbstractEmployeeWriter{
     }
     @Override
     public void writeEmployees(Employee[] employees) {
-        try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(pathToFile))){
+       /* try(BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(pathToFile))){
             bufferedWriter.write(employees.length + "\n");
             for(int i = 0; i<employees.length;i++){
                 bufferedWriter.write(employees[i].toString() + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
     }
 }
