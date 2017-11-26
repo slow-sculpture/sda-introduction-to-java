@@ -6,6 +6,7 @@ import companyManager.fileoperations.reader.EmployeeReader;
 import companyManager.fileoperations.util.ArrayUtil;
 import companyManager.fileoperations.writer.EmployeeWriter;
 
+import java.lang.reflect.Field;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -17,6 +18,7 @@ public class Program {
     static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
+       // Field[] declaredFields = Employee.class.getDeclaredFields();
 
         System.out.println("Podaj nazwe firmy: ");
         String name = scanner.nextLine();

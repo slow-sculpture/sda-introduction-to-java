@@ -1,5 +1,10 @@
 package companyManager;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+
+//xml wszystkie dane i ma pobrac przez gettera
+@XmlAccessorType(XmlAccessType.PROPERTY)
 public class Employee {
     ///////////////////////////////////////////////////////////////////////////
     private int id;           //dorabiamy identyfikator + get i set
@@ -11,6 +16,9 @@ public class Employee {
     private int age;
     private double salary;
 
+    private Employee(){
+
+    }
     public Employee(String name, String surname){
         this.name = name;
         this.surname = surname;

@@ -1,13 +1,23 @@
 package companyManager.fileoperations.reader;
 
+import companyManager.Company;
 import companyManager.Employee;
 import companyManager.fileoperations.util.ParseUtil;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBException;
+import javax.xml.bind.Unmarshaller;
+import java.io.*;
 
+/**
+ * XML znaczniki
+ *   javax.xml.bind.annotation - aby utworzyc w javie
+ * <nazwa> </nazwa>          //korzen root -> Company -> adnotacja @XmlRootElement(), getter  @XmlElement()
+ *      <id></id>           //wartosc    @XmlAccessorType(XmlAccessType.PROPERTY)
+ *      <age a=1> </age>  //atrybut      @XmlAttribute
+ *
+ *
+ * */
 public class XmlEmployeeReader extends AbstractEmployeeReader {
     public XmlEmployeeReader(String pathToFile) {
         super(pathToFile);
@@ -15,39 +25,18 @@ public class XmlEmployeeReader extends AbstractEmployeeReader {
 
     @Override
     public Employee[] readEmployees() {
-        //tworze zbior pracownikow odczytanych z pliku o ilosc w pierwszej linijce tekstu
-        Employee[] employees = null;
-        int i = 0;
-
-        try (BufferedReader bufferedReader = new BufferedReader(new FileReader(pathToFile))){
-            //odczyt z pliku wilkosci tablicy
-            //na razie jest tekstem
-            String companySize = bufferedReader.readLine();
-            int theSize = Integer.parseInt(companySize);
-            employees = new Employee[theSize];
-
-            //odczyt pozostalych linii tekstu + podzial tekstu na elementy
-            String line = bufferedReader.readLine();
-            while(line != null){
-                String[] text = line.split(" ");
-                //tworze pracownika z konstruktora
-                Employee newEmp = new Employee(text[1], text[2]);
-                newEmp.setId(Integer.parseInt(text[0]));
-                newEmp.setAge(Integer.parseInt(text[3]));
-                newEmp.setSalary(ParseUtil.parseDouble(text[4]));
-                //dodanie pracownika do tablicy
-                employees[i++] = newEmp;
-            }
-
-        } catch (FileNotFoundException e) {
-            System.out.println("Brak pliku");
+        try {
+            JAXBContext context = JAXBContext.newInstance(Company.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Object obj = unmarshaller.unmarshal(new File(pathToFile));
+            Company result = (Company) obj;
+            return result.getEmployees();
+        } catch (JAXBException e) {
             e.printStackTrace();
-        } catch (IOException e) {
-            System.out.println("Blad");
-            e.printStackTrace();
+            return null;
         }
 
 
-        return employees;
+
     }
 }

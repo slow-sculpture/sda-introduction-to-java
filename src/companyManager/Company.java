@@ -1,5 +1,11 @@
 package companyManager;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+//do xml trzeba powiedziec ze to jest xml root
+@XmlRootElement(name = "company")
+
 public class Company {
     private static final int DEFAULT_SIZE = 5;
     private String name;
@@ -9,6 +15,10 @@ public class Company {
     private int companySize = 0;
 
     //konstruktory
+
+    public Company() { // konstruktor na potrzeby xml
+    }
+
     public Company(String name) {
         this.name = name;
         this.employees = new Employee[DEFAULT_SIZE];  //trzeba zainicjalizowac, bo nie ma sensu dawac jako parametr kontrukrora
@@ -49,7 +59,13 @@ public class Company {
         this.name = name;
     }
         //tylko do odczytu
+    @XmlElement(name = "employee")   //do xml
     public Employee[] getEmployees() {
         return employees;
     }
+
+    public void setEmployees(Employee[] employees) {
+        this.employees = employees;
+    }
+
 }
