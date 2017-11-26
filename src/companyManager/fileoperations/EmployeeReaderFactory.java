@@ -8,6 +8,7 @@ import companyManager.fileoperations.reader.*;
  * w zaleznosci od podanego rozszerzenia pliku
  */
 public class EmployeeReaderFactory {
+    //metoda zwracajac typ interfejsowy
     public static EmployeeReader createReader(String path) {
         if (path.endsWith(".txt")) {
             return new TxtEmployeeReader(path);

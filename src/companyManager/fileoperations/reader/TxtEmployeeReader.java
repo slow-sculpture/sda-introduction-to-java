@@ -8,6 +8,9 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+/**
+ * Konkretna klasa umozliwiajaca odczyt z pliku
+ */
 public class TxtEmployeeReader extends AbstractEmployeeReader {
     public TxtEmployeeReader(String pathToFile) {                        //konstruktor
         super(pathToFile);
@@ -19,7 +22,7 @@ public class TxtEmployeeReader extends AbstractEmployeeReader {
         Employee[] employees = null;                             //nie wiem jaka duza - zapisane w pierwszej linijce txt
         int i = 0;
 
-        //try with resources -> java 7 - samo zrobi close()
+        //try with resources (jesli mamy do czynienia z zasobami to probujemy otworzyc) -> java 7 - samo zrobi close()
         try (BufferedReader bufferedReader = new BufferedReader(new FileReader(pathToFile))) {
 
             //odczyt pierwszej linijki z txt - wielkosc tablicy employees - ilosc pracownikow
@@ -41,7 +44,7 @@ public class TxtEmployeeReader extends AbstractEmployeeReader {
                 Employee emp = new Employee(split[1], split[2]);
                 emp.setId(Integer.parseInt(split[0]));
                 emp.setAge(Integer.parseInt(split[3]));
-                emp.setSalary(ParseUtil.parseDouble(split[4]));
+                emp.setSalary(ParseUtil.parseDouble(split[4]));    //util bo sie wywala jak wpiszemy z przecinkiem
                 employees[i++] = emp;
 
             }

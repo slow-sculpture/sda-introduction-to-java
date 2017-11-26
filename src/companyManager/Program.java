@@ -5,7 +5,6 @@ import companyManager.fileoperations.EmployeeWriterFactory;
 import companyManager.fileoperations.reader.EmployeeReader;
 import companyManager.fileoperations.util.ArrayUtil;
 import companyManager.fileoperations.writer.EmployeeWriter;
-import companyManager.fileoperations.writer.TxtEmployeeWriter;
 
 import java.util.Arrays;
 import java.util.Scanner;

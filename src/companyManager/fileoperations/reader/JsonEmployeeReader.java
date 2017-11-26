@@ -1,6 +1,7 @@
 package companyManager.fileoperations.reader;
 
 import companyManager.Employee;
+import companyManager.fileoperations.util.ParseUtil;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
@@ -25,7 +26,7 @@ public class JsonEmployeeReader extends AbstractEmployeeReader {
                 Employee newEmp = new Employee(text[1], text[2]);
                 newEmp.setId(Integer.parseInt(text[0]));
                 newEmp.setAge(Integer.parseInt(text[3]));
-                newEmp.setSalary(Double.parseDouble(text[4]));
+                newEmp.setSalary(ParseUtil.parseDouble(text[4]));
                 employees[i++] = newEmp;
             }
         } catch (FileNotFoundException e) {
