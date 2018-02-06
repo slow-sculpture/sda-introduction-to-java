@@ -1,3 +1,5 @@
 
-]
--src\zajecia8\exceptions\dividebyzero\App.java,1\5\153bc05a0a5d93f0f92e773f6f7233846981b749
+R
+"src\zajecia3\FunctionZadanie8.java,4\0\404064f3cd084e6816a6dfc8334fffdb582f920d
+L
+src\zajecia4\MathHelper.java,2\3\2388307451d60a3ac8c93aafe3b0dc7a70122f70

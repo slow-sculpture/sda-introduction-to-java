@@ -19,10 +19,10 @@ public class FunctionZadanie9zfunkcjaPS {
         double c = tri.nextDouble();
 
         if (a + b > c && a + c > b && b + c > a) {
-            double P = triangleArea(a, b, c);
-            System.out.println("Pole trojkata wynosi: " + String.format("%.2f", P));
-        } else {
-            System.out.println("Podane dlugosci nie pozwalaja utworzyc trojkata.");
+                double P = triangleArea(a, b, c);
+                System.out.println("Pole trojkata wynosi: " + String.format("%.2f", P));
+            } else {
+                System.out.println("Podane dlugosci nie pozwalaja utworzyc trojkata.");
         }
 
     }
